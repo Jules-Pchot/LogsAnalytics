@@ -20,6 +20,9 @@ def main():
     else:
         print("File does not exist")
     # Process logs to estimate streams
-    utils.making_dataframe(logs)
+    songs_by_contry = utils.making_dataframe(logs)
+    sorted_songs_by_contry = utils.get_top_50_songs_by_country(songs_by_contry)
+    utils.write_top_50_file(output_directory, sorted_songs_by_contry)
+
 if __name__ == "__main__":
     main()
